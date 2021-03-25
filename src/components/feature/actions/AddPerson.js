@@ -88,138 +88,138 @@ function AddPerson(props) {
       });
       return (
         <form onSubmit={formik.handleSubmit}>
-        <FormGroup>
-        <Label htmlFor="firstName">First Name</Label>
-        <TextInputBox>
-        <TextInput
-          id="firstName"
-          name="firstName"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-        />
-        </TextInputBox>
+          <FormGroup>
+          <Label htmlFor="firstName">First Name</Label>
+          <TextInputBox>
+          <TextInput
+            id="firstName"
+            name="firstName"
+            type="text"
+            onChange={formik.handleChange}
+            value={formik.values.firstName}
+          />
+          </TextInputBox>
+          </FormGroup>
+
+          <FormGroup>
+          <Label htmlFor="firstName">Last Name</Label>
+          <TextInputBox>
+          <TextInput
+            id="firstName"
+            name="firstName"
+            type="text"
+            onChange={formik.handleChange}
+            value={formik.values.firstName}
+          />
+          </TextInputBox>
+          </FormGroup>
+
+
+          <FormGroup>
+          <Label htmlFor="firstName">Position</Label>
+          <TextInputBox>
+          <TextInput
+            id="firstName"
+            name="firstName"
+            type="text"
+            onChange={formik.handleChange}
+            value={formik.values.firstName}
+          />
+          </TextInputBox>
+          </FormGroup>
+
+          <FormGroup>
+          <Label htmlFor="firstName">Label</Label>
+          <Select styles={colourStyles}
+                                value={selectInput.selectedGroup}
+                                onChange={handleSelectGroup}
+                                options={instantLables}
+                                isMulti={false}
+                                isSearchable={false}
+                              />
+
+          </FormGroup>
+            <FormGroup>
+            <Label htmlFor="firstName">Organization</Label>
+            <TextInputBox>
+            <Icon>
+            <BsBuilding />
+            </Icon>
+        
+            <TextInput
+              id="firstName"
+              name="firstName"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.firstName}
+            />
+            </TextInputBox>
+            </FormGroup>
+
+            <FormGroup>
+            <Label htmlFor="firstName">Cell Phone</Label>
+            <TextInputBox>
+            <TextInput
+              id="firstName"
+              name="firstName"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.firstName}
+            />
+            </TextInputBox>
+            </FormGroup>
+
+
+            <FormGroup>
+            <Label htmlFor="firstName">Other Phone</Label>
+            <TextInputBox>
+            <TextInput
+              id="firstName"
+              name="firstName"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.firstName}
+            />
+            </TextInputBox>
+            </FormGroup>
+
+            <FormGroup>
+            <Label htmlFor="firstName">Email</Label>
+            <TextInputBox>
+            <TextInput
+              id="firstName"
+              name="firstName"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.firstName}
+            />
+            </TextInputBox>
+            </FormGroup>
+
+            <FormGroup>
+          <Label htmlFor="firstName">Owner</Label>
+          <Select styles={colourStyles}
+                                value={selectInput.selectedGroup}
+                                onChange={handleSelectGroup}
+                                options={instantLables}
+                                isMulti={false}
+                                isSearchable={false}
+                              />
+
+          </FormGroup>
+
+          <FormGroup>
+        <Label htmlFor="firstName">Visible to</Label>
+        <Select styles={colourStyles}
+                              value={selectInput.selectedGroup}
+                              onChange={handleSelectGroup}
+                              options={instantLables}
+                              isMulti={false}
+                              isSearchable={false}
+                            />
+
         </FormGroup>
-
-        <FormGroup>
-        <Label htmlFor="firstName">Last Name</Label>
-        <TextInputBox>
-        <TextInput
-          id="firstName"
-          name="firstName"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-        />
-        </TextInputBox>
-        </FormGroup>
-
-
-        <FormGroup>
-        <Label htmlFor="firstName">Position</Label>
-        <TextInputBox>
-        <TextInput
-          id="firstName"
-          name="firstName"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-        />
-        </TextInputBox>
-        </FormGroup>
-
-       <FormGroup>
-       <Label htmlFor="firstName">Label</Label>
-       <Select styles={colourStyles}
-                            value={selectInput.selectedGroup}
-                            onChange={handleSelectGroup}
-                            options={instantLables}
-                            isMulti={false}
-                            isSearchable={false}
-                          />
-
-       </FormGroup>
-        <FormGroup>
-        <Label htmlFor="firstName">Organization</Label>
-        <TextInputBox>
-        <Icon>
-        <BsBuilding />
-        </Icon>
-    
-        <TextInput
-          id="firstName"
-          name="firstName"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-        />
-        </TextInputBox>
-        </FormGroup>
-
-        <FormGroup>
-        <Label htmlFor="firstName">Cell Phone</Label>
-        <TextInputBox>
-        <TextInput
-          id="firstName"
-          name="firstName"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-        />
-        </TextInputBox>
-        </FormGroup>
-
-
-        <FormGroup>
-        <Label htmlFor="firstName">Other Phone</Label>
-        <TextInputBox>
-        <TextInput
-          id="firstName"
-          name="firstName"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-        />
-        </TextInputBox>
-        </FormGroup>
-
-        <FormGroup>
-        <Label htmlFor="firstName">Email</Label>
-        <TextInputBox>
-        <TextInput
-          id="firstName"
-          name="firstName"
-          type="text"
-          onChange={formik.handleChange}
-          value={formik.values.firstName}
-        />
-        </TextInputBox>
-        </FormGroup>
-
-        <FormGroup>
-       <Label htmlFor="firstName">Owner</Label>
-       <Select styles={colourStyles}
-                            value={selectInput.selectedGroup}
-                            onChange={handleSelectGroup}
-                            options={instantLables}
-                            isMulti={false}
-                            isSearchable={false}
-                          />
-
-       </FormGroup>
-
-       <FormGroup>
-       <Label htmlFor="firstName">Visible to</Label>
-       <Select styles={colourStyles}
-                            value={selectInput.selectedGroup}
-                            onChange={handleSelectGroup}
-                            options={instantLables}
-                            isMulti={false}
-                            isSearchable={false}
-                          />
-
-       </FormGroup>
-       
+        
       </form>
       );
     };
