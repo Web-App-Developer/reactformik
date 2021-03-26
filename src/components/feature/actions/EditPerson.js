@@ -5,7 +5,7 @@ import { FormGroup, Label, TextInput, TextInputBox, Icon } from '../../styles/Fo
 import LabelBox from '../../shared/LabelBox';
 import { ErrorText } from '../../styles/App';
 
-function AddPerson({label, formik}) {
+function EditPerson({label, formik, editData, people}) {
     const [selectLabelInput, setSelectLabelInput] = useState("");
     const [selectOwnerInput, setSelectOwnerInput] = useState("");
     const [selectVisibleInput, setSelectVisibleInput] = useState("");
@@ -28,7 +28,7 @@ function AddPerson({label, formik}) {
 
       const instantLabel = [ {
           options:label.map((item, i) => (
-            {id:item.id, color:item.color,name:item.name, value: item.name, label:<div><LabelBox color={item?.color}>{item?.name}</LabelBox></div> }
+            { value: item.name, label:<div><LabelBox color={item?.color}>{item?.name}</LabelBox></div> }
           ))
       }
       ];
@@ -66,10 +66,16 @@ function AddPerson({label, formik}) {
       };
 
       useEffect(() => {
-        formik.values.label = selectLabelInput.selectedGroup;
-        formik.values.owner = selectOwnerInput.selectedGroup;
-        formik.values.visible_to = selectVisibleInput.selectedGroup;
-      }, [formik.values, selectLabelInput.selectedGroup, selectOwnerInput.selectedGroup, selectVisibleInput.selectedGroup])
+        formik.setFieldValue("label", selectLabelInput.selectedGroup);
+      }, [selectLabelInput.selectedGroup])
+
+      useEffect(() => {
+        formik.setFieldValue("owner",selectOwnerInput.selectedGroup);
+      }, [selectOwnerInput.selectedGroup])
+
+      useEffect(() => {
+        formik.setFieldValue("visible_to",selectVisibleInput.selectedGroup);
+      }, [selectVisibleInput.selectedGroup])
 
       return (
         <form>
@@ -81,7 +87,7 @@ function AddPerson({label, formik}) {
           name="firstname"
           type="text"
           onChange={formik.handleChange}
-          value={formik.values.firstname}
+          value={formik.values.firstname || ""}
         />
         </TextInputBox>
         
@@ -99,7 +105,7 @@ function AddPerson({label, formik}) {
           name="lastname"
           type="text"
           onChange={formik.handleChange}
-          value={formik.values.lastname}
+          value={formik.values.lastname || ""}
         />
         </TextInputBox>
        
@@ -118,7 +124,7 @@ function AddPerson({label, formik}) {
           name="position"
           type="text"
           onChange={formik.handleChange}
-          value={formik.values.position}
+          value={formik.values.position || ""}
         />
         </TextInputBox>
         </FormGroup>
@@ -126,7 +132,7 @@ function AddPerson({label, formik}) {
        <FormGroup>
        <Label htmlFor="label">Label</Label>
        <Select styles={colourStyles}
-                            value={selectLabelInput.selectedGroup}
+                            defaultValue={{ value: editData?.label?.name, label:<div><LabelBox color={editData?.label?.color}>{editData?.label?.name}</LabelBox></div> }}
                             onChange={handleLabelSelectGroup}
                             options={instantLabel}
                             isMulti={false}
@@ -147,7 +153,7 @@ function AddPerson({label, formik}) {
          name="organization"
          type="text"
          onChange={formik.handleChange}
-         value={formik.values.organization}
+         value={formik.values.organization || ""}
         />
         </TextInputBox>
         </FormGroup>
@@ -160,7 +166,7 @@ function AddPerson({label, formik}) {
           name="cell_phone"
           type="text"
           onChange={formik.handleChange}
-          value={formik.values.cell_phone}
+          value={formik.values.cell_phone || ""}
         />
         </TextInputBox>
         
@@ -179,7 +185,7 @@ function AddPerson({label, formik}) {
           name="other_phone"
           type="text"
           onChange={formik.handleChange}
-          value={formik.values.other_phone}
+          value={formik.values.other_phone || ""}
         />
         </TextInputBox>
         </FormGroup>
@@ -192,7 +198,7 @@ function AddPerson({label, formik}) {
           name="email"
           type="email"
           onChange={formik.handleChange}
-          value={formik.values.email}
+          value={formik.values.email || ""}
         />
         </TextInputBox>
        
@@ -205,7 +211,7 @@ function AddPerson({label, formik}) {
         <FormGroup>
        <Label htmlFor="owner">Owner</Label>
        <Select styles={colourStyles}
-                            value={selectOwnerInput.selectedGroup}
+                            defaultValue={{value:editData?.owner?.value, label:editData?.owner?.label}}
                             onChange={handleOwnerSelectGroup}
                             options={ownersLabel}
                             isMulti={false}
@@ -217,7 +223,7 @@ function AddPerson({label, formik}) {
        <FormGroup>
        <Label htmlFor="visible_to">Visible to</Label>
        <Select styles={colourStyles}
-                            value={selectVisibleInput.selectedGroup}
+                            defaultValue={{value:editData?.visible_to?.value, label:editData?.visible_to?.label}}
                             onChange={handleVisibleSelectGroup}
                             options={visibleLabel}
                             isMulti={false}
@@ -229,4 +235,4 @@ function AddPerson({label, formik}) {
       </form>
       );
     };
-export default AddPerson;
+export default EditPerson;
